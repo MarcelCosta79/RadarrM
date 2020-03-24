@@ -7,7 +7,7 @@
 #
 #
 
-fpath="$sonarr_episodefile_path"
+fpath="$radarr_moviefile_path"
 file=$(basename "$fpath")
 ss=$(dirname "$fpath")
 cd "$ss"
