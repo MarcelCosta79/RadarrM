@@ -6,4 +6,4 @@ RUN apt-get update
 RUN apt -y install mkvtoolnix mkvtoolnix-gui
 RUN mkdir /scripts
 COPY scripts/ /scripts
-RUN chmod 751 /scripts/strip.sh
+RUN chmod 765 /scripts/strip.sh
