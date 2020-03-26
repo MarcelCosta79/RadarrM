@@ -54,13 +54,13 @@ cd "$ss"
 				# mv "$1" /media/Trash/;
 				if [ $APP_TOKEN != "YOUR_TOKEN_HERE" ] #Don't alter
 				then 
-					wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN=$file - Audio Removed!&title=SonarrM" -qO- > /dev/null 2>&1 &
+					wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN=$file - Audio Removed!&title=RadarrM" -qO- > /dev/null 2>&1 &
 				fi
 			else
 				echo "6: Nothing found to remove. Will exit script now."
 				if [ $APP_TOKEN != "YOUR_TOKEN_HERE" ] #Don't alter
 				then 
-					wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Nothing found to remove.&title=SonarrM" -qO- > /dev/null 2>&1 &
+					wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Nothing found to remove.&title=RadarrM" -qO- > /dev/null 2>&1 &
 				fi
 			fi
        else
@@ -73,7 +73,7 @@ cd "$ss"
 				 # mv "$1" /media/Trash/;
 					if [ $APP_TOKEN != "YOUR_TOKEN_HERE" ] #Don't alter
 					then 
-							wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Only foreign audio, kept it. Unwanted subtitles removed&title=SonarrM" -qO- > /dev/null 2>&1 &
+							wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Only foreign audio, kept it. Unwanted subtitles removed&title=RadarrM" -qO- > /dev/null 2>&1 &
 					fi
 			else
 				subs="-S";
@@ -83,7 +83,7 @@ cd "$ss"
 				# mv "$1" /media/Trash/;
 					if [ $APP_TOKEN != "YOUR_TOKEN_HERE" ] #Don't alter
 					then 
-							wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Unwanted Audio and subtitles removed.&title=SonarrM" -qO- > /dev/null 2>&1 &
+							wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Unwanted Audio and subtitles removed.&title=RadarrM" -qO- > /dev/null 2>&1 &
 					fi
 			fi
        fi
@@ -93,7 +93,7 @@ cd "$ss"
 	   echo "3: Only needed audio and subtitles found" 
 	   if [ $APP_TOKEN != "YOUR_TOKEN_HERE" ] #Don't alter
 		then 
-				wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Nothing found to remove.&title=SonarrM" -qO- > /dev/null 2>&1 &
+				wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Nothing found to remove.&title=RadarrM" -qO- > /dev/null 2>&1 &
 		fi
 	  
      else
@@ -109,10 +109,10 @@ cd "$ss"
 				then
 					if [ $diffsubs -gt 0 ]
 					then 
-						wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Only foreign audio, kept it. Unwanted subtitles removed.&title=SonarrM" -qO- > /dev/null 2>&1 &
+						wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Only foreign audio, kept it. Unwanted subtitles removed.&title=RadarrM" -qO- > /dev/null 2>&1 &
 					elif [ $diffsubs -eq 0 ]
 					then
-						wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Only foreign audio, kept it.&title=SonarrM" -qO- > /dev/null 2>&1 &
+						wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Only foreign audio, kept it.&title=RadarrM" -qO- > /dev/null 2>&1 &
 					
 					fi
 				fi
@@ -128,13 +128,13 @@ cd "$ss"
 			then
 				if [ $diffsubs -gt 0 -a $diffaudio -gt 0 ]
 				then 
-					wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Audio and Subtitles removed.&title=SonarrM" -qO- > /dev/null 2>&1 &
+					wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Audio and Subtitles removed.&title=RadarrM" -qO- > /dev/null 2>&1 &
 				elif [ $diffaudio -gt 0 ]
 				then
-					wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Audio removed.&title=SonarrM" -qO- > /dev/null 2>&1 &
+					wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Audio removed.&title=RadarrM" -qO- > /dev/null 2>&1 &
 				elif [ $diffsubs -gt 0 ]
 				then	
-					wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Subtitles removed.&title=SonarrM" -qO- > /dev/null 2>&1 &
+					wget https://api.pushover.net/1/messages.json --post-data="token=$APP_TOKEN&user=$USER_TOKEN&message=$file - Subtitles removed.&title=RadarrM" -qO- > /dev/null 2>&1 &
 				fi
 			fi
 		fi
