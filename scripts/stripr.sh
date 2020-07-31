@@ -23,8 +23,6 @@ info="%3Ca%20href%3D%22https%3A%2F%2Fwww.imdb.com%2Ftitle%2F$radarr_movie_imdbid
 ####################################################################
 
 
-
-
 fpath="$radarr_moviefile_path"
 file=$(basename "$fpath")
 ss=$(dirname "$fpath")
@@ -51,7 +49,6 @@ subscount=$(echo $subs | tr "," "\n" | wc -l)
 echo "2: Found subtitle tracks $subs ($subscount) to keep"
 ##################################################################################################################################################################
 
-
 ######################################################### SOME MATHS #############################################################################################
 #Total number of audios and subtitles tracks	
 totalaudio=$(echo "$DETAILS" | jq '.tracks[] | select (.type=="audio") | .id' | wc -l)
@@ -63,7 +60,6 @@ diffsubs=$(expr $totalsubs - $subscount)
 		
 ##################################################################################################################################################################		
 
-
     echo "3: setting parameters"
 
     if [ -z "$subs" ] # If: String Empty. Purge subtitles. Else: keep wanted subs.
@@ -72,9 +68,7 @@ diffsubs=$(expr $totalsubs - $subscount)
     else
       subs="-s $subs"
     fi
-    
-	
-	
+    		
 	if [ -z "$audio" ]
 			then
 				 mkvmerge $subs -o "${file%.mkv}".edited.mkv "$file"; #keep Orignal audio
