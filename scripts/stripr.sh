@@ -37,7 +37,7 @@ mkvmerge -i "$file"
 
 ########################################################## FIND & SEEK ###########################################################################################
 #Track wanted audio files
-audio=$(echo "$DETAILS" | jq '[.tracks[] | select (.type=="audio" and (.properties.language | test("eng|por|kor|jpn|und")) and (.properties.track_name | test("Commentary|Director"; "i") | not)) | select (.codec | test("TruHV|AC9|DTZ"; "i") | not) |  .id] | map(tostring) | join(",")' | cut -f2 -d\")
+audio=$(audio=$(echo "$DETAILS" | jq '[.tracks[] | select (.type=="audio" and (.properties.language | test("eng|por|kor|jpn|und"))) | select (.codec | test("TruHV|AC9|DTZ"; "i") | not) |  .id] | map(tostring) | join(",")' | cut -f2 -d\"))
 #Total wanted audio files
 audiocount=$(echo $audio | tr "," "\n" | wc -l)
 echo "1: Found audio tracks $audio ($audiocount) to keep"
